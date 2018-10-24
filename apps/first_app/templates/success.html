@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .head {
+        width: 100%;
+    }
+    div {
+        display:inline-block;
+    }
+
+    .message {
+        border: 1px solid black;
+        padding: 3%;
+        width: 80%;
+    }
+    </style>
+
+</head>
+<body>
+    <div class='head'>
+        <h1>CodingDojo Wall</h1>
+        <p>Welcome, {{request.session.first_name}}!</p>
+        
+        
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+        {%for thing in users %}
+            <tr>
+                <td>{{thing.first_name}}</td>
+                <td>{{thing.last_name}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        
+        <a href='/'>Log off</a>
+    </div>
+    
+
+</body>
+</html>
